@@ -6,10 +6,12 @@ import logging
 
 from colorama import Fore, init, Style
 from threading import Thread
-if os.name == "nt":
-    os.system("cls")
-else:
+
+if sys.platform == "linux":
     os.system("clear")
+elif sys.platform == "win32":
+    os.system("cls")
+
 logging.basicConfig(
     level=logging.INFO, 
     format="%(asctime)s %(message)s", 
